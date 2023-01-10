@@ -8,8 +8,12 @@ def index():
     name = 'taro'
     return render_template('index.html', name=name)
 
+@app.route('/hello')
+def hello():
+    return 'Hello, World!'
+
 @app.route("/<name>")
-def hello(name):
+def helloname(name):
     return f"Hello, {escape(name)}!"
 
 if __name__ == '__main__':
